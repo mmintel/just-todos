@@ -3,13 +3,13 @@ import { TodoDTO } from '../dtos/todo.dto';
 
 @Entity()
 export class Todo implements TodoDTO {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @Column()
   title: string;
 
-  @Column()
+  @Column({ nullable: true })
   description?: string;
 
   @Column({ default: false })

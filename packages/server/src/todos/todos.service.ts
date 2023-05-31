@@ -20,8 +20,10 @@ export class TodosService {
     return this.todosRepository.findOneBy({ id });
   }
 
-  async create(payload: CreateTodoDTO): Promise<void> {
-    await this.todosRepository.create(payload);
+  async create(payload: CreateTodoDTO): Promise<Todo> {
+    const todo = await this.todosRepository.create(payload);
+    await this.todosRepository.save(todo);
+    return todo;
   }
 
   async update(id: string, payload: UpdateTodoDTO): Promise<void> {
