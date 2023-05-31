@@ -36,6 +36,17 @@ export class TodosController {
     return Result.ok<TodoDTO[]>(todos);
   }
 
+  @Get(':id')
+  async getTodo(
+    @Param('id') id: string,
+    @Res({ passthrough: true }) res: Response,
+  ): Promise<HTTPResult<TodoDTO>> {
+    this.logger.log('Getting all TODOs...');
+    const todo = await this.todosService.findOne(id);
+    res.status(HttpStatus.OK);
+    return Result.ok<TodoDTO>(todo);
+  }
+
   @Post()
   async createTodo(
     @Body() payload: CreateTodoDTO,
