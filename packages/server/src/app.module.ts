@@ -4,9 +4,12 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TodosModule } from './todos/todos.module';
 import { SeedingService } from './console/seeding.service';
+import { Todo } from './todos/entities/todo.entity';
+import { ConsoleModule } from 'nestjs-console';
 
 @Module({
   imports: [
+    ConsoleModule,
     TypeOrmModule.forRoot({
       type: 'postgres',
       port: Number(process.env.POSTGRES_PORT) || 5432,
@@ -16,7 +19,7 @@ import { SeedingService } from './console/seeding.service';
       database: process.env.POSTGRES_DATABASE || 'postgres',
       synchronize: process.env.NODE_ENV !== 'production',
       logging: true,
-      entities: ['dist/src/**/*.entity.js'],
+      entities: [Todo],
       migrations: ['dist/src/db/migrations/*.js'],
     }),
     TodosModule,
