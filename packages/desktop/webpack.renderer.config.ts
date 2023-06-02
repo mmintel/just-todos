@@ -2,6 +2,7 @@ import type { Configuration } from 'webpack';
 
 import { rules } from './webpack.rules';
 import { plugins } from './webpack.plugins';
+import { resolve } from "./webpack.resolve";
 
 rules.push({
   test: /\.css$/,
@@ -13,7 +14,5 @@ export const rendererConfig: Configuration = {
     rules,
   },
   plugins,
-  resolve: {
-    extensions: ['.js', '.ts', '.jsx', '.tsx', '.css'],
-  },
+  resolve,
 };

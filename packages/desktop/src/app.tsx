@@ -1,8 +1,5 @@
-import * as ReactDOM from "react-dom";
-// import { Foo } from "@local/shared";
+import { Button } from "ui";
 
-function render() {
-  ReactDOM.render(<h2>Hello from React!</h2>, document.body);
-}
-
-render();
+export const App = () => {
+  return <Button>Lorem ipsum</Button>;
+};

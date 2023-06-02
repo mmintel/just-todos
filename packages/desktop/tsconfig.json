@@ -6,7 +6,6 @@
     }
   ],
   "compilerOptions": {
-    "composite": true,
     "jsx": "react-jsx",
     "target": "ES6",
     "allowJs": true,
