@@ -32,6 +32,7 @@
     "file-loader": "^6.2.0",
     "fork-ts-checker-webpack-plugin": "^7.2.13",
     "node-loader": "^2.0.0",
+    "postcss-loader": "^7.3.2",
     "style-loader": "^3.0.0",
     "tamagui-loader": "^1.30.16",
     "thread-loader": "^4.0.2",
@@ -42,6 +43,8 @@
   },
   "dependencies": {
     "@tamagui/config": "^1.30.16",
+    "@tamagui/lucide-icons": "^1.30.18",
+    "@tamagui/react-native-svg": "^1.30.18",
     "@tamagui/shorthands": "^1.30.16",
     "@tamagui/themes": "^1.30.16",
     "electron-squirrel-startup": "^1.0.0",
@@ -49,7 +52,7 @@
     "react-dom": "^18.2.0",
     "react-native": "^0.71.8",
     "react-native-web-lite": "^1.30.16",
-    "ui": "*",
-    "tamagui": "^1.30.16"
+    "tamagui": "^1.30.16",
+    "ui": "*"
   }
 }

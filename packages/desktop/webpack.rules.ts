@@ -24,31 +24,17 @@ export const rules: Required<ModuleOptions>["rules"] = [
       {
         loader: "esbuild-loader",
       },
-
-      // {
-      //   loader: "ts-loader",
-      //   options: {
-      //     transpileOnly: true,
-      //   },
-      // },
       {
         loader: "tamagui-loader",
         options: tamaguiOptions,
       },
     ],
   },
-  {
-    test: /\.(svg|ico|icns)$/,
-    loader: "file-loader",
-    options: {
-      name: "[path][name].[ext]",
-    },
-  },
-  {
-    test: /\.(jpg|png|woff|woff2|eot|ttf)$/,
-    loader: "url-loader",
-    options: {
-      name: "[path][name].[ext]",
-    },
-  },
+  // {
+  //   test: /\.(jpg|png|woff|woff2|eot|ttf)$/,
+  //   loader: "url-loader",
+  //   options: {
+  //     name: "[path][name].[ext]",
+  //   },
+  // },
 ];

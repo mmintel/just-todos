@@ -1,1 +1,1 @@
-export { Button } from "tamagui";
+export * from "tamagui";
