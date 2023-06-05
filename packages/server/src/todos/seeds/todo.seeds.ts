@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { CreateTodoDTO } from '../dtos/create-todo.dto';
+import { CreateTodoDTO } from 'lib';
 
 export function createTodoSeed(): CreateTodoDTO {
   return {

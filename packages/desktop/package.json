@@ -52,7 +52,9 @@
     "react-dom": "^18.2.0",
     "react-native": "^0.71.8",
     "react-native-web-lite": "^1.30.16",
+    "swr": "^2.1.5",
     "tamagui": "^1.30.16",
-    "ui": "*"
+    "ui": "*",
+    "unfetch": "^5.0.0"
   }
 }

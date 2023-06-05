@@ -1,4 +1,4 @@
-import { Plus } from "@tamagui/lucide-icons";
+import useSWR from "swr";
 import {
   Button,
   Input,
@@ -9,25 +9,24 @@ import {
   YStack,
 } from "tamagui";
 
-const todos = [
-  {
-    id: "apsodjaosd",
-    title: "foo",
-    description: "Lorem",
-  },
-  {
-    id: "2190ejße",
-    title: "bar",
-    description: "Lorem",
-  },
-];
+import { HTTPResult, TodoDTO } from "lib";
+import fetch from "unfetch";
+
+const fetcher = (url: string) =>
+  fetch(["http://localhost:3000", url].join("/")).then((r) => r.json());
 
 export const App = () => {
+  const { data, error, isLoading } = useSWR<HTTPResult<TodoDTO[]>>(
+    "/todos",
+    fetcher
+  );
+  if (error) return <div>failed to load</div>;
+  if (isLoading) return <div>loading...</div>;
   return (
     <YStack space p="$6" height="100vh">
       <ScrollView flex={1}>
         <YStack space="$2">
-          {todos.map((todo) => (
+          {data.data.map((todo) => (
             <XStack
               enterStyle={{ opacity: 0 }}
               bg="$gray4"

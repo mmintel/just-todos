@@ -13,10 +13,8 @@ import {
 } from '@nestjs/common';
 import { Response } from 'express';
 import { ApiKeyGuard } from 'src/api-key/api-key.guard';
-import { HTTPResult, Result } from 'src/core/Result';
-import { CreateTodoDTO } from './dtos/create-todo.dto';
-import { TodoDTO } from './dtos/todo.dto';
-import { UpdateTodoDTO } from './dtos/update-todo.dto';
+import { HTTPResult, Result } from 'lib/src/core/Result';
+import { UpdateTodoDTO, CreateTodoDTO, TodoDTO } from 'lib';
 import { TodosService } from './todos.service';
 
 @Controller('todos')

@@ -2,10 +2,14 @@
   "extends": "../../tsconfig.json",
   "references": [
     {
-      "path": "../shared"
+      "path": "../lib"
+    },
+    {
+      "path": "../ui"
     }
   ],
   "compilerOptions": {
+    "composite": true,
     "jsx": "react-jsx",
     "target": "ES6",
     "allowJs": true,
@@ -19,5 +23,5 @@
     "moduleResolution": "node",
     "resolveJsonModule": true
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*", "tamagui.config.ts"]
 }

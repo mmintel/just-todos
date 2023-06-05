@@ -1,5 +1,5 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
-import { TodoDTO } from '../dtos/todo.dto';
+import { TodoDTO } from 'lib';
 import { Transform } from 'class-transformer';
 import { IsBoolean, IsString } from 'class-validator';
 import sanitizeHtml from 'sanitize-html';
